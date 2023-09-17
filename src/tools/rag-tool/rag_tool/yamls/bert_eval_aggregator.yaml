@@ -1,0 +1,10 @@
+rag_tool.tools.bert_eval_aggregator.aggregate:
+  description: BERT evaluation aggregator
+  function: aggregate
+  inputs:
+    processed_results:
+      type:
+      - list
+  module: rag_tool.tools.bert_eval_aggregator
+  name: BERT Evaluation aggregator
+  type: python

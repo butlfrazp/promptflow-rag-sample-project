@@ -1,0 +1,75 @@
+id: rag-flow
+name: rag-flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  chat_history:
+    type: list
+    default: []
+  chat_input:
+    type: string
+    is_chat_input: true
+    default: What is the meaning of life?
+outputs:
+  answer:
+    type: string
+    reference: ${llm.output}
+    is_chat_output: true
+  context:
+    type: string
+    reference: ${generate_prompt_context.output}
+    is_chat_output: false
+nodes:
+- name: embed_the_question
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: azure_openai_connection
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.chat_input}
+- name: vectordb
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
+  inputs:
+    connection: cognitive_search_connection
+    index_name: tutorial-index
+    text_field: content
+    vector_field: content_vector
+    top_k: 10
+    vector: ${embed_the_question.output}
+- name: re_rank
+  type: python
+  source:
+    type: package
+    tool: rag_tool.tools.re_ranker.re_ranker
+  inputs:
+    inputs: ${vectordb.output}
+    query: ${inputs.chat_input}
+    model_name: distilroberta-base
+    top_k: 5
+- name: generate_prompt_context
+  type: python
+  source:
+    type: code
+    path: generate_prompt_context.py
+  inputs:
+    search_result: ${vectordb.output}
+- name: llm
+  type: llm
+  source:
+    type: code
+    path: chat.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo
+    max_tokens: 1000
+    temperature: 0
+    chat_history: ${inputs.chat_history}
+    question: ${inputs.chat_input}
+    contexts: ${generate_prompt_context.output}
+  provider: AzureOpenAI
+  connection: azure_openai_connection
+  api: chat

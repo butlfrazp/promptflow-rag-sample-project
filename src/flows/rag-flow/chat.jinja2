@@ -1,0 +1,20 @@
+system:
+You are a helpful assistant. Answer the user's question with the context provided below in as little words as possible. If you don't know the answer, respond with "I don't know".
+
+Example:
+
+context: 2 + 2 is 4
+user: What is 2 + 2
+assistant: 4
+
+context: {{contexts}}
+
+{% for item in chat_history %}
+user:
+{{item.inputs.question}}
+assistant:
+{{item.outputs.answer}}
+{% endfor %}
+
+user:
+{{question}}

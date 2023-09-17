@@ -1,0 +1,13 @@
+{
+  "bert_results": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "rouge_results": {
+    "rouge1": 1.0,
+    "rouge2": 0.0,
+    "rougeL": 1.0,
+    "rougeLsum": 1.0
+  }
+}

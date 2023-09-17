@@ -1,0 +1,10 @@
+rag_tool.tools.rouge_eval_aggregator.aggregate:
+  description: ROUGE evaluation aggregator
+  function: aggregate
+  inputs:
+    processed_results:
+      type:
+      - list
+  module: rag_tool.tools.rouge_eval_aggregator
+  name: ROUGE Evaluation aggregator
+  type: python

@@ -1,0 +1,20 @@
+rag_tool.tools.re_ranker.re_ranker:
+  description: CrossEncoder ReRanker
+  function: re_ranker
+  inputs:
+    inputs:
+      type:
+      - list
+    query:
+      type:
+      - string
+    model_name:
+      type:
+      - string
+    top_k:
+      default: '5'
+      type:
+      - int
+  module: rag_tool.tools.re_ranker
+  name: CrossEncoder ReRanker
+  type: python

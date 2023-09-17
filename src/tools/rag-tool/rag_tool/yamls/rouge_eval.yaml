@@ -1,0 +1,13 @@
+rag_tool.tools.rouge_eval.eval:
+  description: ROUGE Evaluation
+  function: eval
+  inputs:
+    prediction:
+      type:
+      - string
+    expected_value:
+      type:
+      - string
+  module: rag_tool.tools.rouge_eval
+  name: ROUGE Evaluation
+  type: python

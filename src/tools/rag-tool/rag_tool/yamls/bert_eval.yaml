@@ -1,0 +1,13 @@
+rag_tool.tools.bert_eval.eval:
+  description: BERT evaluation
+  function: eval
+  inputs:
+    prediction:
+      type:
+      - string
+    expected_value:
+      type:
+      - string
+  module: rag_tool.tools.bert_eval
+  name: BERT Evaluation
+  type: python

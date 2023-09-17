@@ -1,0 +1,28 @@
+{
+  "package": {},
+  "code": {
+    "line_process.py": {
+      "type": "python",
+      "inputs": {
+        "groundtruth": {
+          "type": ["string"]
+        },
+        "prediction": {
+          "type": ["string"]
+        }
+      },
+      "function": "line_process",
+      "is_builtin": false
+    },
+    "aggregate.py": {
+      "type": "python",
+      "inputs": {
+        "processed_results": {
+          "type": ["object"]
+        }
+      },
+      "function": "aggregate",
+      "is_builtin": false
+    }
+  }
+}

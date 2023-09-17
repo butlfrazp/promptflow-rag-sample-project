@@ -1,0 +1,14 @@
+promptflow
+promptflow-tools
+sentence-transformers
+
+# evalution packages
+absl-py
+datasets
+nltk
+rouge-score
+evaluate
+numpy
+six
+transformers
+bert-score

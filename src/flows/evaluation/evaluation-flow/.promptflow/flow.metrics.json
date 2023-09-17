@@ -1,0 +1,9 @@
+{
+  "median_bert_precision": 1.0,
+  "median_bert_recall": 1.0,
+  "median_bert_f1": 1.0,
+  "median_rouge_rouge1": 1.0,
+  "median_rouge_rouge2": 0.0,
+  "median_rouge_rougeL": 1.0,
+  "median_rouge_rougeLSum": 1.0
+}

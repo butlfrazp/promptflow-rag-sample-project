@@ -1,0 +1,9 @@
+promptflow
+promptflow-tools
+python-dotenv
+langchain==0.0.292
+azure-search-documents==11.4.0b8
+azure-identity
+tiktoken
+
+keyrings.alt

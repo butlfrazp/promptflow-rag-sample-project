@@ -1,0 +1,51 @@
+inputs:
+  groundtruth:
+    type: string
+    default: 42
+  prediction:
+    type: string
+    default: 42
+outputs:
+  bert_results:
+    type: object
+    reference: ${bert_eval.output}
+  rouge_results:
+    type: object
+    reference: ${rouge_eval.output}
+nodes:
+- name: bert_eval
+  type: python
+  source:
+    type: package
+    tool: rag_tool.tools.bert_eval.eval
+  inputs:
+    expected_value: ${inputs.groundtruth}
+    prediction: ${inputs.prediction}
+- name: bert_eval_aggregator
+  type: python
+  source:
+    type: package
+    tool: rag_tool.tools.bert_eval_aggregator.aggregate
+  inputs:
+    processed_results: ${bert_eval.output}
+  aggregation: true
+- name: rouge_eval
+  type: python
+  source:
+    type: package
+    tool: rag_tool.tools.rouge_eval.eval
+  inputs:
+    expected_value: ${inputs.groundtruth}
+    prediction: ${inputs.prediction}
+- name: rouge_eval_aggregator
+  type: python
+  source:
+    type: package
+    tool: rag_tool.tools.rouge_eval_aggregator.aggregate
+  inputs:
+    processed_results: ${rouge_eval.output}
+  aggregation: true
+id: evaluation-flow
+name: Evaluation Flow
+environment:
+    python_requirements_txt: requirements.txt

@@ -1,0 +1,358 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "groundtruth": 42,
+        "prediction": 42
+      },
+      "output": {
+        "bert_results": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rouge_results": {
+          "rouge1": 1.0,
+          "rouge2": 0.0,
+          "rougeL": 1.0,
+          "rougeLsum": 1.0
+        }
+      },
+      "metrics": {
+        "median_bert_precision": 1.0,
+        "median_bert_recall": 1.0,
+        "median_bert_f1": 1.0,
+        "median_rouge_rouge1": 1.0,
+        "median_rouge_rouge2": 0.0,
+        "median_rouge_rougeL": 1.0,
+        "median_rouge_rougeLSum": 1.0
+      },
+      "request": null,
+      "parent_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207",
+      "root_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207",
+      "source_run_id": null,
+      "flow_id": "evaluation-flow",
+      "start_time": "2023-09-17T20:34:21.739416Z",
+      "end_time": "2023-09-17T20:36:14.415334Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "eval",
+          "type": "Tool",
+          "inputs": {
+            "expected_value": "42",
+            "prediction": "42"
+          },
+          "output": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "start_time": 1694982861.743917,
+          "end_time": 1694982974.412501,
+          "error": null,
+          "children": null,
+          "node_name": "bert_eval"
+        },
+        {
+          "name": "eval",
+          "type": "Tool",
+          "inputs": {
+            "expected_value": "42",
+            "prediction": "42"
+          },
+          "output": {
+            "rouge1": 1.0,
+            "rouge2": 0.0,
+            "rougeL": 1.0,
+            "rougeLsum": 1.0
+          },
+          "start_time": 1694982861.744531,
+          "end_time": 1694982862.340939,
+          "error": null,
+          "children": null,
+          "node_name": "rouge_eval"
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 112.675918,
+        "total_tokens": 0
+      },
+      "result": {
+        "bert_results": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "rouge_results": {
+          "rouge1": 1.0,
+          "rouge2": 0.0,
+          "rougeL": 1.0,
+          "rougeLsum": 1.0
+        }
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "bert_eval",
+      "flow_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207",
+      "run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207_bert_eval_0",
+      "status": "Completed",
+      "inputs": {
+        "expected_value": "42",
+        "prediction": "42"
+      },
+      "output": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207_0",
+      "start_time": "2023-09-17T20:34:21.743656Z",
+      "end_time": "2023-09-17T20:36:14.412772Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "eval",
+          "type": "Tool",
+          "inputs": {
+            "expected_value": "42",
+            "prediction": "42"
+          },
+          "output": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "start_time": 1694982861.743917,
+          "end_time": 1694982974.412501,
+          "error": null,
+          "children": null,
+          "node_name": "bert_eval"
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": "[2023-09-17T20:34:22+0000] \rDownloading (\u2026)lve/main/config.json:   0%|          | 0.00/482 [00:00<?, ?B/s][2023-09-17T20:34:22+0000] [2023-09-17T20:34:22+0000] \rDownloading (\u2026)lve/main/config.json: 100%|##########| 482/482 [00:00<00:00, 44.5kB/s]\n[2023-09-17T20:34:22+0000] \rDownloading (\u2026)olve/main/vocab.json:   0%|          | 0.00/899k [00:00<?, ?B/s][2023-09-17T20:34:22+0000] [2023-09-17T20:34:22+0000] \rDownloading (\u2026)olve/main/vocab.json: 100%|##########| 899k/899k [00:00<00:00, 10.4MB/s]\n[2023-09-17T20:34:22+0000] \rDownloading (\u2026)olve/main/merges.txt:   0%|          | 0.00/456k [00:00<?, ?B/s][2023-09-17T20:34:22+0000] [2023-09-17T20:34:22+0000] \rDownloading (\u2026)olve/main/merges.txt: 100%|##########| 456k/456k [00:00<00:00, 10.3MB/s]\n[2023-09-17T20:34:23+0000] \rDownloading model.safetensors:   0%|          | 0.00/1.42G [00:00<?, ?B/s][2023-09-17T20:34:24+0000] \rDownloading model.safetensors:   1%|          | 10.5M/1.42G [00:00<01:40, 14.1MB/s][2023-09-17T20:34:25+0000] \rDownloading model.safetensors:   1%|1         | 21.0M/1.42G [00:01<01:51, 12.5MB/s][2023-09-17T20:34:25+0000] \rDownloading model.safetensors:   2%|2         | 31.5M/1.42G [00:02<01:44, 13.3MB/s][2023-09-17T20:34:26+0000] \rDownloading model.safetensors:   3%|2         | 41.9M/1.42G [00:03<01:35, 14.4MB/s][2023-09-17T20:34:27+0000] \rDownloading model.safetensors:   4%|3         | 52.4M/1.42G [00:03<01:31, 15.0MB/s][2023-09-17T20:34:27+0000] \rDownloading model.safetensors:   4%|4         | 62.9M/1.42G [00:04<01:29, 15.2MB/s][2023-09-17T20:34:28+0000] \rDownloading model.safetensors:   5%|5         | 73.4M/1.42G [00:04<01:23, 16.2MB/s][2023-09-17T20:34:29+0000] \rDownloading model.safetensors:   6%|5         | 83.9M/1.42G [00:05<01:24, 15.8MB/s][2023-09-17T20:34:29+0000] \rDownloading model.safetensors:   7%|6         | 94.4M/1.42G [00:06<01:24, 15.6MB/s][2023-09-17T20:34:30+0000] \rDownloading model.safetensors:   7%|7         | 105M/1.42G [00:06<01:23, 15.7MB/s] [2023-09-17T20:34:31+0000] \rDownloading model.safetensors:   8%|8         | 115M/1.42G [00:07<01:24, 15.5MB/s][2023-09-17T20:34:31+0000] \rDownloading model.safetensors:   9%|8         | 126M/1.42G [00:08<01:22, 15.6MB/s][2023-09-17T20:34:32+0000] \rDownloading model.safetensors:  10%|9         | 136M/1.42G [00:08<01:23, 15.3MB/s][2023-09-17T20:34:33+0000] \rDownloading model.safetensors:  10%|#         | 147M/1.42G [00:09<01:26, 14.7MB/s][2023-09-17T20:34:34+0000] \rDownloading model.safetensors:  11%|#1        | 157M/1.42G [00:10<01:28, 14.3MB/s][2023-09-17T20:34:34+0000] \rDownloading model.safetensors:  12%|#1        | 168M/1.42G [00:11<01:26, 14.5MB/s][2023-09-17T20:34:35+0000] \rDownloading model.safetensors:  13%|#2        | 178M/1.42G [00:11<01:25, 14.6MB/s][2023-09-17T20:34:36+0000] \rDownloading model.safetensors:  13%|#3        | 189M/1.42G [00:12<01:23, 14.8MB/s][2023-09-17T20:34:36+0000] \rDownloading model.safetensors:  14%|#4        | 199M/1.42G [00:13<01:18, 15.7MB/s][2023-09-17T20:34:37+0000] \rDownloading model.safetensors:  15%|#4        | 210M/1.42G [00:13<01:17, 15.7MB/s][2023-09-17T20:34:38+0000] \rDownloading model.safetensors:  15%|#5        | 220M/1.42G [00:14<01:15, 15.9MB/s][2023-09-17T20:34:38+0000] \rDownloading model.safetensors:  16%|#6        | 231M/1.42G [00:15<01:12, 16.5MB/s][2023-09-17T20:34:39+0000] \rDownloading model.safetensors:  17%|#6        | 241M/1.42G [00:15<01:10, 16.8MB/s][2023-09-17T20:34:39+0000] \rDownloading model.safetensors:  18%|#7        | 252M/1.42G [00:16<01:09, 16.9MB/s][2023-09-17T20:34:40+0000] \rDownloading model.safetensors:  18%|#8        | 262M/1.42G [00:16<01:08, 17.0MB/s][2023-09-17T20:34:41+0000] \rDownloading model.safetensors:  19%|#9        | 273M/1.42G [00:17<01:09, 16.6MB/s][2023-09-17T20:34:41+0000] \rDownloading model.safetensors:  20%|#9        | 283M/1.42G [00:18<01:10, 16.1MB/s][2023-09-17T20:34:42+0000] \rDownloading model.safetensors:  21%|##        | 294M/1.42G [00:18<01:08, 16.4MB/s][2023-09-17T20:34:43+0000] \rDownloading model.safetensors:  21%|##1       | 304M/1.42G [00:19<01:09, 16.0MB/s][2023-09-17T20:34:43+0000] \rDownloading model.safetensors:  22%|##2       | 315M/1.42G [00:20<01:08, 16.1MB/s][2023-09-17T20:34:44+0000] \rDownloading model.safetensors:  23%|##2       | 325M/1.42G [00:20<01:10, 15.7MB/s][2023-09-17T20:34:45+0000] \rDownloading model.safetensors:  24%|##3       | 336M/1.42G [00:21<01:07, 16.0MB/s][2023-09-17T20:34:45+0000] \rDownloading model.safetensors:  24%|##4       | 346M/1.42G [00:22<01:06, 16.1MB/s][2023-09-17T20:34:46+0000] \rDownloading model.safetensors:  25%|##5       | 357M/1.42G [00:22<01:08, 15.6MB/s][2023-09-17T20:34:47+0000] \rDownloading model.safetensors:  26%|##5       | 367M/1.42G [00:23<01:06, 15.9MB/s][2023-09-17T20:34:47+0000] \rDownloading model.safetensors:  27%|##6       | 377M/1.42G [00:24<01:04, 16.2MB/s][2023-09-17T20:34:48+0000] \rDownloading model.safetensors:  27%|##7       | 388M/1.42G [00:24<01:02, 16.7MB/s][2023-09-17T20:34:49+0000] \rDownloading model.safetensors:  28%|##8       | 398M/1.42G [00:25<01:02, 16.4MB/s][2023-09-17T20:34:49+0000] \rDownloading model.safetensors:  29%|##8       | 409M/1.42G [00:26<01:04, 15.7MB/s][2023-09-17T20:34:50+0000] \rDownloading model.safetensors:  30%|##9       | 419M/1.42G [00:26<01:02, 16.1MB/s][2023-09-17T20:34:50+0000] \rDownloading model.safetensors:  30%|###       | 430M/1.42G [00:27<01:00, 16.5MB/s][2023-09-17T20:34:51+0000] \rDownloading model.safetensors:  31%|###       | 440M/1.42G [00:28<01:01, 15.9MB/s][2023-09-17T20:34:52+0000] \rDownloading model.safetensors:  32%|###1      | 451M/1.42G [00:29<01:09, 14.0MB/s][2023-09-17T20:34:53+0000] \rDownloading model.safetensors:  32%|###2      | 461M/1.42G [00:29<01:05, 14.7MB/s][2023-09-17T20:34:54+0000] \rDownloading model.safetensors:  33%|###3      | 472M/1.42G [00:30<01:05, 14.5MB/s][2023-09-17T20:34:54+0000] \rDownloading model.safetensors:  34%|###3      | 482M/1.42G [00:31<01:04, 14.6MB/s][2023-09-17T20:34:55+0000] \rDownloading model.safetensors:  35%|###4      | 493M/1.42G [00:31<01:01, 15.2MB/s][2023-09-17T20:34:55+0000] \rDownloading model.safetensors:  35%|###5      | 503M/1.42G [00:32<00:57, 16.1MB/s][2023-09-17T20:34:56+0000] \rDownloading model.safetensors:  36%|###6      | 514M/1.42G [00:32<00:55, 16.5MB/s][2023-09-17T20:34:57+0000] \rDownloading model.safetensors:  37%|###6      | 524M/1.42G [00:33<00:54, 16.5MB/s][2023-09-17T20:34:57+0000] \rDownloading model.safetensors:  38%|###7      | 535M/1.42G [00:34<00:55, 16.0MB/s][2023-09-17T20:34:58+0000] \rDownloading model.safetensors:  38%|###8      | 545M/1.42G [00:34<00:53, 16.5MB/s][2023-09-17T20:34:58+0000] \rDownloading model.safetensors:  39%|###9      | 556M/1.42G [00:35<00:50, 17.3MB/s][2023-09-17T20:34:59+0000] \rDownloading model.safetensors:  40%|###9      | 566M/1.42G [00:36<00:50, 17.1MB/s][2023-09-17T20:35:00+0000] \rDownloading model.safetensors:  41%|####      | 577M/1.42G [00:36<00:51, 16.6MB/s][2023-09-17T20:35:00+0000] \rDownloading model.safetensors:  41%|####1     | 587M/1.42G [00:37<00:48, 17.1MB/s][2023-09-17T20:35:01+0000] \rDownloading model.safetensors:  42%|####2     | 598M/1.42G [00:37<00:48, 17.1MB/s][2023-09-17T20:35:02+0000] \rDownloading model.safetensors:  43%|####2     | 608M/1.42G [00:38<00:49, 16.6MB/s][2023-09-17T20:35:02+0000] \rDownloading model.safetensors:  44%|####3     | 619M/1.42G [00:39<00:47, 16.8MB/s][2023-09-17T20:35:03+0000] \rDownloading model.safetensors:  44%|####4     | 629M/1.42G [00:39<00:46, 17.1MB/s][2023-09-17T20:35:03+0000] \rDownloading model.safetensors:  45%|####4     | 640M/1.42G [00:40<00:44, 17.4MB/s][2023-09-17T20:35:04+0000] \rDownloading model.safetensors:  46%|####5     | 650M/1.42G [00:40<00:45, 17.0MB/s][2023-09-17T20:35:05+0000] \rDownloading model.safetensors:  46%|####6     | 661M/1.42G [00:41<00:46, 16.5MB/s][2023-09-17T20:35:05+0000] \rDownloading model.safetensors:  47%|####7     | 671M/1.42G [00:42<00:44, 16.8MB/s][2023-09-17T20:35:06+0000] \rDownloading model.safetensors:  48%|####7     | 682M/1.42G [00:42<00:44, 16.5MB/s][2023-09-17T20:35:07+0000] \rDownloading model.safetensors:  49%|####8     | 692M/1.42G [00:43<00:47, 15.2MB/s][2023-09-17T20:35:08+0000] \rDownloading model.safetensors:  49%|####9     | 703M/1.42G [00:44<00:47, 15.2MB/s][2023-09-17T20:35:08+0000] \rDownloading model.safetensors:  50%|#####     | 713M/1.42G [00:45<00:45, 15.7MB/s][2023-09-17T20:35:09+0000] \rDownloading model.safetensors:  51%|#####     | 724M/1.42G [00:45<00:42, 16.3MB/s][2023-09-17T20:35:09+0000] \rDownloading model.safetensors:  52%|#####1    | 734M/1.42G [00:46<00:41, 16.4MB/s][2023-09-17T20:35:10+0000] \rDownloading model.safetensors:  52%|#####2    | 744M/1.42G [00:47<00:43, 15.6MB/s][2023-09-17T20:35:11+0000] \rDownloading model.safetensors:  53%|#####3    | 755M/1.42G [00:47<00:42, 15.8MB/s][2023-09-17T20:35:11+0000] \rDownloading model.safetensors:  54%|#####3    | 765M/1.42G [00:48<00:41, 16.0MB/s][2023-09-17T20:35:12+0000] \rDownloading model.safetensors:  55%|#####4    | 776M/1.42G [00:48<00:40, 16.1MB/s][2023-09-17T20:35:13+0000] \rDownloading model.safetensors:  55%|#####5    | 786M/1.42G [00:49<00:41, 15.2MB/s][2023-09-17T20:35:13+0000] \rDownloading model.safetensors:  56%|#####6    | 797M/1.42G [00:50<00:39, 15.7MB/s][2023-09-17T20:35:14+0000] \rDownloading model.safetensors:  57%|#####6    | 807M/1.42G [00:50<00:38, 16.1MB/s][2023-09-17T20:35:15+0000] \rDownloading model.safetensors:  58%|#####7    | 818M/1.42G [00:51<00:36, 16.4MB/s][2023-09-17T20:35:15+0000] \rDownloading model.safetensors:  58%|#####8    | 828M/1.42G [00:52<00:37, 16.0MB/s][2023-09-17T20:35:16+0000] \rDownloading model.safetensors:  59%|#####9    | 839M/1.42G [00:52<00:36, 16.0MB/s][2023-09-17T20:35:17+0000] \rDownloading model.safetensors:  60%|#####9    | 849M/1.42G [00:53<00:34, 16.6MB/s][2023-09-17T20:35:17+0000] \rDownloading model.safetensors:  60%|######    | 860M/1.42G [00:54<00:32, 17.3MB/s][2023-09-17T20:35:18+0000] \rDownloading model.safetensors:  61%|######1   | 870M/1.42G [00:54<00:32, 17.2MB/s][2023-09-17T20:35:18+0000] \rDownloading model.safetensors:  62%|######1   | 881M/1.42G [00:55<00:32, 16.7MB/s][2023-09-17T20:35:19+0000] \rDownloading model.safetensors:  63%|######2   | 891M/1.42G [00:55<00:32, 16.5MB/s][2023-09-17T20:35:20+0000] \rDownloading model.safetensors:  63%|######3   | 902M/1.42G [00:56<00:31, 16.4MB/s][2023-09-17T20:35:20+0000] \rDownloading model.safetensors:  64%|######4   | 912M/1.42G [00:57<00:31, 16.0MB/s][2023-09-17T20:35:21+0000] \rDownloading model.safetensors:  65%|######4   | 923M/1.42G [00:57<00:30, 16.4MB/s][2023-09-17T20:35:22+0000] \rDownloading model.safetensors:  66%|######5   | 933M/1.42G [00:58<00:29, 16.5MB/s][2023-09-17T20:35:22+0000] \rDownloading model.safetensors:  66%|######6   | 944M/1.42G [00:59<00:28, 16.8MB/s][2023-09-17T20:35:23+0000] \rDownloading model.safetensors:  67%|######7   | 954M/1.42G [00:59<00:27, 17.2MB/s][2023-09-17T20:35:24+0000] \rDownloading model.safetensors:  68%|######7   | 965M/1.42G [01:00<00:28, 16.1MB/s][2023-09-17T20:35:24+0000] \rDownloading model.safetensors:  69%|######8   | 975M/1.42G [01:01<00:27, 16.3MB/s][2023-09-17T20:35:25+0000] \rDownloading model.safetensors:  69%|######9   | 986M/1.42G [01:01<00:25, 16.9MB/s][2023-09-17T20:35:25+0000] \rDownloading model.safetensors:  70%|#######   | 996M/1.42G [01:02<00:24, 17.3MB/s][2023-09-17T20:35:26+0000] \rDownloading model.safetensors:  71%|#######   | 1.01G/1.42G [01:02<00:24, 17.0MB/s][2023-09-17T20:35:27+0000] \rDownloading model.safetensors:  72%|#######1  | 1.02G/1.42G [01:03<00:24, 16.4MB/s][2023-09-17T20:35:27+0000] \rDownloading model.safetensors:  72%|#######2  | 1.03G/1.42G [01:04<00:26, 15.1MB/s][2023-09-17T20:35:28+0000] \rDownloading model.safetensors:  73%|#######3  | 1.04G/1.42G [01:05<00:24, 15.5MB/s][2023-09-17T20:35:29+0000] \rDownloading model.safetensors:  74%|#######3  | 1.05G/1.42G [01:05<00:25, 14.9MB/s][2023-09-17T20:35:30+0000] \rDownloading model.safetensors:  74%|#######4  | 1.06G/1.42G [01:06<00:25, 14.3MB/s][2023-09-17T20:35:30+0000] \rDownloading model.safetensors:  75%|#######5  | 1.07G/1.42G [01:07<00:23, 15.1MB/s][2023-09-17T20:35:31+0000] \rDownloading model.safetensors:  76%|#######5  | 1.08G/1.42G [01:07<00:21, 15.8MB/s][2023-09-17T20:35:32+0000] \rDownloading model.safetensors:  77%|#######6  | 1.09G/1.42G [01:08<00:22, 14.8MB/s][2023-09-17T20:35:32+0000] \rDownloading model.safetensors:  77%|#######7  | 1.10G/1.42G [01:09<00:20, 15.6MB/s][2023-09-17T20:35:33+0000] \rDownloading model.safetensors:  78%|#######8  | 1.11G/1.42G [01:09<00:19, 16.3MB/s][2023-09-17T20:35:33+0000] \rDownloading model.safetensors:  79%|#######8  | 1.12G/1.42G [01:10<00:18, 16.5MB/s][2023-09-17T20:35:34+0000] \rDownloading model.safetensors:  80%|#######9  | 1.13G/1.42G [01:11<00:19, 14.6MB/s][2023-09-17T20:35:35+0000] \rDownloading model.safetensors:  80%|########  | 1.14G/1.42G [01:11<00:18, 15.2MB/s][2023-09-17T20:35:36+0000] \rDownloading model.safetensors:  81%|########1 | 1.15G/1.42G [01:12<00:17, 15.6MB/s][2023-09-17T20:35:36+0000] \rDownloading model.safetensors:  82%|########1 | 1.16G/1.42G [01:13<00:15, 16.4MB/s][2023-09-17T20:35:37+0000] \rDownloading model.safetensors:  83%|########2 | 1.17G/1.42G [01:13<00:16, 15.3MB/s][2023-09-17T20:35:38+0000] \rDownloading model.safetensors:  83%|########3 | 1.18G/1.42G [01:14<00:15, 15.2MB/s][2023-09-17T20:35:38+0000] \rDownloading model.safetensors:  84%|########4 | 1.20G/1.42G [01:15<00:14, 15.7MB/s][2023-09-17T20:35:39+0000] \rDownloading model.safetensors:  85%|########4 | 1.21G/1.42G [01:15<00:13, 15.8MB/s][2023-09-17T20:35:40+0000] \rDownloading model.safetensors:  86%|########5 | 1.22G/1.42G [01:16<00:14, 14.4MB/s][2023-09-17T20:35:41+0000] \rDownloading model.safetensors:  86%|########6 | 1.23G/1.42G [01:17<00:13, 14.5MB/s][2023-09-17T20:35:41+0000] \rDownloading model.safetensors:  87%|########7 | 1.24G/1.42G [01:18<00:11, 15.5MB/s][2023-09-17T20:35:42+0000] \rDownloading model.safetensors:  88%|########7 | 1.25G/1.42G [01:18<00:12, 13.7MB/s][2023-09-17T20:35:44+0000] \rDownloading model.safetensors:  89%|########8 | 1.26G/1.42G [01:20<00:15, 10.7MB/s][2023-09-17T20:35:45+0000] \rDownloading model.safetensors:  89%|########9 | 1.27G/1.42G [01:22<00:17, 8.62MB/s][2023-09-17T20:35:46+0000] \rDownloading model.safetensors:  90%|########9 | 1.28G/1.42G [01:23<00:14, 9.61MB/s][2023-09-17T20:35:47+0000] \rDownloading model.safetensors:  91%|######### | 1.29G/1.42G [01:23<00:13, 10.1MB/s][2023-09-17T20:35:48+0000] \rDownloading model.safetensors:  91%|#########1| 1.30G/1.42G [01:25<00:12, 10.0MB/s][2023-09-17T20:35:49+0000] \rDownloading model.safetensors:  92%|#########2| 1.31G/1.42G [01:25<00:09, 11.5MB/s][2023-09-17T20:35:49+0000] \rDownloading model.safetensors:  93%|#########2| 1.32G/1.42G [01:26<00:08, 12.2MB/s][2023-09-17T20:35:50+0000] \rDownloading model.safetensors:  94%|#########3| 1.33G/1.42G [01:26<00:06, 13.4MB/s][2023-09-17T20:35:51+0000] \rDownloading model.safetensors:  94%|#########4| 1.34G/1.42G [01:27<00:05, 13.7MB/s][2023-09-17T20:35:52+0000] \rDownloading model.safetensors:  95%|#########5| 1.35G/1.42G [01:28<00:04, 14.0MB/s][2023-09-17T20:35:52+0000] \rDownloading model.safetensors:  96%|#########5| 1.36G/1.42G [01:29<00:03, 14.9MB/s][2023-09-17T20:35:53+0000] \rDownloading model.safetensors:  97%|#########6| 1.37G/1.42G [01:29<00:03, 15.4MB/s][2023-09-17T20:35:53+0000] \rDownloading model.safetensors:  97%|#########7| 1.38G/1.42G [01:30<00:02, 14.9MB/s][2023-09-17T20:35:54+0000] \rDownloading model.safetensors:  98%|#########8| 1.39G/1.42G [01:31<00:01, 14.9MB/s][2023-09-17T20:35:55+0000] \rDownloading model.safetensors:  99%|#########8| 1.41G/1.42G [01:31<00:01, 15.9MB/s][2023-09-17T20:35:55+0000] \rDownloading model.safetensors: 100%|#########9| 1.42G/1.42G [01:32<00:00, 15.3MB/s][2023-09-17T20:35:56+0000] \rDownloading model.safetensors: 100%|##########| 1.42G/1.42G [01:32<00:00, 14.0MB/s][2023-09-17T20:35:56+0000] [2023-09-17T20:35:56+0000] \rDownloading model.safetensors: 100%|##########| 1.42G/1.42G [01:33<00:00, 15.3MB/s]\n"
+      },
+      "system_metrics": {
+        "duration": 112.669116
+      },
+      "result": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "node": "rouge_eval",
+      "flow_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207",
+      "run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207_rouge_eval_0",
+      "status": "Completed",
+      "inputs": {
+        "expected_value": "42",
+        "prediction": "42"
+      },
+      "output": {
+        "rouge1": 1.0,
+        "rouge2": 0.0,
+        "rougeL": 1.0,
+        "rougeLsum": 1.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "eab39d6c-ac82-481e-bc15-b31f62ada207_0",
+      "start_time": "2023-09-17T20:34:21.744396Z",
+      "end_time": "2023-09-17T20:34:22.341206Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "eval",
+          "type": "Tool",
+          "inputs": {
+            "expected_value": "42",
+            "prediction": "42"
+          },
+          "output": {
+            "rouge1": 1.0,
+            "rouge2": 0.0,
+            "rougeL": 1.0,
+            "rougeLsum": 1.0
+          },
+          "start_time": 1694982861.744531,
+          "end_time": 1694982862.340939,
+          "error": null,
+          "children": null,
+          "node_name": "rouge_eval"
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.59681
+      },
+      "result": {
+        "rouge1": 1.0,
+        "rouge2": 0.0,
+        "rougeL": 1.0,
+        "rougeLsum": 1.0
+      }
+    },
+    {
+      "node": "bert_eval_aggregator",
+      "flow_run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b",
+      "run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b_bert_eval_aggregator_reduce",
+      "status": "Completed",
+      "inputs": {
+        "processed_results": [
+          {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        ]
+      },
+      "output": {
+        "median_bert_precision": 1.0,
+        "median_bert_recall": 1.0,
+        "median_bert_f1": 1.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b",
+      "start_time": "2023-09-17T20:36:14.418767Z",
+      "end_time": "2023-09-17T20:36:14.419914Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "aggregate",
+          "type": "Tool",
+          "inputs": {
+            "processed_results": [
+              {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            ]
+          },
+          "output": {
+            "median_bert_precision": 1.0,
+            "median_bert_recall": 1.0,
+            "median_bert_f1": 1.0
+          },
+          "start_time": 1694982974.418968,
+          "end_time": 1694982974.419651,
+          "error": null,
+          "children": null,
+          "node_name": "bert_eval_aggregator"
+        }
+      ],
+      "variant_id": null,
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001147
+      },
+      "result": {
+        "median_bert_precision": 1.0,
+        "median_bert_recall": 1.0,
+        "median_bert_f1": 1.0
+      }
+    },
+    {
+      "node": "rouge_eval_aggregator",
+      "flow_run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b",
+      "run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b_rouge_eval_aggregator_reduce",
+      "status": "Completed",
+      "inputs": {
+        "processed_results": [
+          {
+            "rouge1": 1.0,
+            "rouge2": 0.0,
+            "rougeL": 1.0,
+            "rougeLsum": 1.0
+          }
+        ]
+      },
+      "output": {
+        "median_rouge_rouge1": 1.0,
+        "median_rouge_rouge2": 0.0,
+        "median_rouge_rougeL": 1.0,
+        "median_rouge_rougeLSum": 1.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "06fe8d7b-b82f-447b-8ebb-cbe355dfce6b",
+      "start_time": "2023-09-17T20:36:14.420521Z",
+      "end_time": "2023-09-17T20:36:14.421658Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "aggregate",
+          "type": "Tool",
+          "inputs": {
+            "processed_results": [
+              {
+                "rouge1": 1.0,
+                "rouge2": 0.0,
+                "rougeL": 1.0,
+                "rougeLsum": 1.0
+              }
+            ]
+          },
+          "output": {
+            "median_rouge_rouge1": 1.0,
+            "median_rouge_rouge2": 0.0,
+            "median_rouge_rougeL": 1.0,
+            "median_rouge_rougeLSum": 1.0
+          },
+          "start_time": 1694982974.420664,
+          "end_time": 1694982974.421411,
+          "error": null,
+          "children": null,
+          "node_name": "rouge_eval_aggregator"
+        }
+      ],
+      "variant_id": null,
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001137
+      },
+      "result": {
+        "median_rouge_rouge1": 1.0,
+        "median_rouge_rouge2": 0.0,
+        "median_rouge_rougeL": 1.0,
+        "median_rouge_rougeLSum": 1.0
+      }
+    }
+  ]
+}
